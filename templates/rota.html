@@ -1,0 +1,109 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+    Definir Rota
+{% endblock %}
+
+{% block content %}
+
+<div class="container bg-white white my-3 p-3 rounded">
+
+    <h2 class="h1 text-center">Definir Rota</h2>
+
+    <form action = "." method="GET" class="form-inline text-center">
+
+        {% csrf_token %}
+
+        <span class="d-inline h5 mx-2">Inicial:</span>
+
+        <div class="d-inline mx-2">
+            <input type="radio" class="btn-check" name="inicial" id="option1-inicial" value="Catalão" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option1-inicial">Catalão</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option2-inicial" value="Anhanguera" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option2-inicial">Anhanguera</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option3-inicial" value="Marzagão" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option3-inicial">Marzagão</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option4-inicial" value="Ipameri" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option4-inicial">Ipameri</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option5-inicial" value="Buriti Alegre" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option5-inicial">Buriti Alegre</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option6-inicial" value="Morrinhos" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option6-inicial">Morrinhos</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option7-inicial" value="Panamá" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option7-inicial">Panamá</label>
+    
+            <input type="radio" class="btn-check" name="inicial" id="option8-inicial" value="Goiatuba" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option8-inicial">Goiatuba</label>
+
+            <input type="radio" class="btn-check" name="inicial" id="option9-inicial" value="Turvelândia" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option9-inicial">Turvelândia</label>
+
+        </div>
+
+        <br><br>
+
+        <span class="d-inline h5 mx-2">Final:</span>
+
+        <div class="d-inline mx-2">
+            <input type="radio" class="btn-check" name="final" id="option1" value="Catalão" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option1">Catalão</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option2" value="Anhanguera" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option2">Anhanguera</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option3" value="Marzagão" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option3">Marzagão</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option4" value="Ipameri" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option4">Ipameri</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option5" value="Buriti Alegre" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option5">Buriti Alegre</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option6" value="Morrinhos" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option6">Morrinhos</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option7" value="Panamá" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option7">Panamá</label>
+    
+            <input type="radio" class="btn-check" name="final" id="option8" value="Goiatuba" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option8">Goiatuba</label>
+
+            <input type="radio" class="btn-check" name="final" id="option9" value="Turvelândia" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="option9">Turvelândia</label>
+
+        </div>
+
+        <br><br>
+
+        <input type="submit" value="Buscar" class="btn btn-success btn-lg">
+
+    </form>
+    
+    <div class="text-center border-top mt-5">
+
+        {% if distancia %}
+
+        <h2 class="h1 mt-3">Resultado</h2>
+
+        {% elif nao_encontrado %}
+
+        <h2 class="h1 mt-3">Resultado</h2>
+
+        {% endif %}
+
+        <p class="text-success fs-3">{{ distancia }}</p>
+        <p class="text-success fs-3">{{ caminho }}</p>
+        <p class="text-danger fs-3">{{ nao_encontrado }}</p>
+
+    </div>
+
+</div>
+
+{% endblock %}
