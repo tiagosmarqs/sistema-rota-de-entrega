@@ -82,5 +82,5 @@ def caminho_mais_curto(distancias, inicio, fim):
             # Adiciona o vizinho à lista de prioridades com a distância atualizada e o caminho atual
             heapq.heappush(prioridade, (custo + distancia, vizinha, caminho))
 
-    # Se não encontrou o ponto final, retorna infinito e caminho vazio
+    # Se não encontrou o ponto final, retorna None
     return None, None
