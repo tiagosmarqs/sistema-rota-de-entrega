@@ -16,14 +16,14 @@ def rota(request):
         
         distancias = {
             'Catalão': {'Anhanguera': 61.9, 'Marzagão': 114.7, 'Ipameri': 75.1},
-            'Anhanguera': {'Marzagão': 81},
-            'Marzagão': {'Morrinhos': 96.1, 'Buriti Alegre': 63.6},
-            'Ipameri': {'Marzagão': 97.9},
-            'Buriti Alegre': {'Panamá': 55.5, 'Goiatuba': 45},
-            'Morrinhos': {'Buriti Alegre': 56.3},
-            'Panamá': {'Goiatuba': 26.8},
-            'Goiatuba': {'Turvelândia': 120},
-            'Turvelândia': {},
+            'Anhanguera': {'Marzagão': 81, 'Catalão': 61.9},
+            'Marzagão': {'Morrinhos': 96.1, 'Buriti Alegre': 63.6, 'Catalão': 114.7,'Anhanguera': 81, 'Ipameri': 97.9},
+            'Ipameri': {'Marzagão': 97.9, 'Catalão': 75.1},
+            'Buriti Alegre': {'Panamá': 55.5, 'Goiatuba': 45, 'Marzagão': 63.6, 'Morrinhos': 56.3},
+            'Morrinhos': {'Buriti Alegre': 56.3, 'Marzagão': 96.1},
+            'Panamá': {'Goiatuba': 26.8, 'Buriti Alegre': 55.5},
+            'Goiatuba': {'Turvelândia': 120, 'Buriti Alegre': 45, 'Panamá': 26.8},
+            'Turvelândia': {'Goiatuba': 120},
         }
 
         distancia, caminho = caminho_mais_curto(distancias, inicio, fim)
